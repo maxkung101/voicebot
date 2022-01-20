@@ -1,0 +1,5 @@
+numpy==1.22.1
+PyAudio==0.2.11
+pygame==2.1.2
+sounddevice==0.4.4
+SpeechRecognition==3.8.1
