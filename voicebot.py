@@ -5,6 +5,7 @@ import speech_recognition as sr
 import numpy as np
 import sounddevice as sd
 from tkinter import messagebox, ttk
+#from subprocess import check_output # For raspberry pi only
 #from tkinter.messagebox import askyesno # For raspberry pi only
 #from subprocess import call # For raspberry pi only
 
@@ -16,6 +17,7 @@ def getName():
     voices_app.close()
     return data[0][0]
 
+# Set up GUI
 root=tk.Tk()
 width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
@@ -24,13 +26,16 @@ root.resizable(False, False)
 root.title("Voicebot")
 root.configure(background="#4a4a4a")
 
+# Set up microphone
 r = sr.Recognizer()
 m = sr.Microphone()
 heard = False
 
+# Set up settings
 options = [ "Frankie", "Captain Falcon Yes"]
 clicked = tk.StringVar()
 clicked.set(getName())
+#wifi_ip = check_output(['hostname', '-I']) # For raspberry pi only
 
 sounds = pygame.mixer
 sounds.init()
@@ -194,6 +199,13 @@ drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row
 #powr_text = tk.StringVar()
 #powr=tk.Button(my_frame2,font="arial 16",textvariable=powr_text,background="#111111",fg="white",border=0,command=create_window, width = 9,height = 1).grid(row=1,column=1)
 #powr_text.set("Shutdown")
+
+#ip address - For raspberry pi only
+#name_ip=tk.Label(my_frame2,text="My IP: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=2,column=0)
+#if wifi_ip is not None:
+    #name_ip=tk.Label(my_frame2,text=wifi_ip,font="arial 16",background="#4a4a4a",fg="white").grid(row=2,column=1)
+#else:
+    #name_ip=tk.Label(my_frame2,text="",font="arial 16",background="#4a4a4a",fg="white").grid(row=2,column=1)
 
 root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
