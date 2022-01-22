@@ -12,18 +12,6 @@ Clone the repo via git:
 ```
 $ git clone https://github.com/maxkung101/voicebot
 ```
-
-Run
----
-Linux/MacOS
-```
-$ python3 voicebot.py
-```
-PC
-```
-$ python voicebot.py
-```
-
 Note: You must use this program only to answer scam calls. Please do not use it to make calls. Phone scams with robots are against the US law.
 
 Credits
