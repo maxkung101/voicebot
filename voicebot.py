@@ -5,6 +5,7 @@ import speech_recognition as sr
 import numpy as np
 import sounddevice as sd
 from tkinter import messagebox, ttk
+from wifi import Cell, Scheme
 #from subprocess import check_output # For raspberry pi only
 #from tkinter.messagebox import askyesno # For raspberry pi only
 #from subprocess import call # For raspberry pi only
@@ -36,6 +37,9 @@ options = [ "Frankie", "Captain Falcon Yes"]
 clicked = tk.StringVar()
 clicked.set(getName())
 #wifi_ip = check_output(['hostname', '-I']) # For raspberry pi only
+hotspots = []
+for i in Cell.all('wlan0'):
+        hotspots.append(i.ssid)
 
 sounds = pygame.mixer
 sounds.init()
@@ -147,6 +151,9 @@ def changeVoice(value):
     f.write(value)
     f.close()
 
+#def changeHs(value): # For raspberry pi only
+    #pass
+
 def on_closing():
     global startLenny
     startLenny = False
@@ -200,12 +207,19 @@ drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row
 #powr=tk.Button(my_frame2,font="arial 16",textvariable=powr_text,background="#111111",fg="white",border=0,command=create_window, width = 9,height = 1).grid(row=1,column=1)
 #powr_text.set("Shutdown")
 
+#hotspots - For raspberry pi only
+#hot_drop=tk.Label(my_frame2,text="Router: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=2,column=0)
+#drop2 = tk.OptionMenu(my_frame2, tk.StringVar(), *hotspots, command=changeHs).grid(row=2,column=1)
+#entryPass = tk.StringVar()
+#passcode = tk.Entry(my_frame2, textvariable=entryPass).grid(row=3,column=1)
+#entryPass.set("Passcode")
+
 #ip address - For raspberry pi only
-#name_ip=tk.Label(my_frame2,text="My IP: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=2,column=0)
+#name_ip=tk.Label(my_frame2,text="My IP: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=4,column=0)
 #if wifi_ip is not None:
-    #name_ip=tk.Label(my_frame2,text=wifi_ip,font="arial 16",background="#4a4a4a",fg="white").grid(row=2,column=1)
+    #name_ip=tk.Label(my_frame2,text=wifi_ip,font="arial 16",background="#4a4a4a",fg="white").grid(row=4,column=1)
 #else:
-    #name_ip=tk.Label(my_frame2,text="",font="arial 16",background="#4a4a4a",fg="white").grid(row=2,column=1)
+    #name_ip=tk.Label(my_frame2,text="",font="arial 16",background="#4a4a4a",fg="white").grid(row=4,column=1)
 
 root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
