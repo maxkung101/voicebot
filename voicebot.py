@@ -151,11 +151,25 @@ def changeVoice(value):
     f.write(value)
     f.close()
 
+#routerName = ""
+#myRouter = tk.StringVar()
+#myRouter.set(routerName)
 #def changeHs(value): # For raspberry pi only
-    #pass
+    #global routerName
+    #routerName = value
+
 
 #def connHs(): # For raspberry pi only
-    #pass
+    #global routerName, entryPass
+    #name = routerName
+    #password = entryPass.get()
+    #print(paragraph)
+    #text = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n" + "update_config=1\n" + "country=US\n\n" + "network={\n" + "\tssid=\"" + name + "\"\n" + "\tpsk=\"" + password + "\"\n" + "\tkey_mgmt=WPA-PSK\n" + "}\n"
+    #print(text)
+    #fh = open("/etc/wpa_supplicant/wpa_supplicant.conf", "w")
+    #fh.write(text)
+    #fh.close()
+
 
 def on_closing():
     global startLenny
@@ -212,7 +226,7 @@ drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row
 
 #hotspots - For raspberry pi only
 #hot_drop=tk.Label(my_frame2,text="Router: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=2,column=0)
-#drop2 = tk.OptionMenu(my_frame2, tk.StringVar(), *hotspots, command=changeHs).grid(row=2,column=1)
+#drop2 = tk.OptionMenu(my_frame2, myRouter, *hotspots, command=changeHs).grid(row=2,column=1)
 #entryPass = tk.StringVar()
 #passcode = tk.Entry(my_frame2, textvariable=entryPass).grid(row=3,column=1)
 #entryPass.set("Passcode")
