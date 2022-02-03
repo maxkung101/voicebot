@@ -154,6 +154,9 @@ def changeVoice(value):
 #def changeHs(value): # For raspberry pi only
     #pass
 
+#def connHs(): # For raspberry pi only
+    #pass
+
 def on_closing():
     global startLenny
     startLenny = False
@@ -213,13 +216,16 @@ drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row
 #entryPass = tk.StringVar()
 #passcode = tk.Entry(my_frame2, textvariable=entryPass).grid(row=3,column=1)
 #entryPass.set("Passcode")
+#conn_text = tk.StringVar()
+#conn=tk.Button(my_frame2,font="arial 16",textvariable=conn_text,background="#111111",fg="white",border=0,command=connHs, width = 9,height = 1).grid(row=4,column=1)
+#conn_text.set("Connect")
 
 #ip address - For raspberry pi only
-#name_ip=tk.Label(my_frame2,text="My IP: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=4,column=0)
+#name_ip=tk.Label(my_frame2,text="My IP: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=5,column=0)
 #if wifi_ip is not None:
-    #name_ip=tk.Label(my_frame2,text=wifi_ip,font="arial 16",background="#4a4a4a",fg="white").grid(row=4,column=1)
+    #name_ip=tk.Label(my_frame2,text=wifi_ip,font="arial 16",background="#4a4a4a",fg="white").grid(row=5,column=1)
 #else:
-    #name_ip=tk.Label(my_frame2,text="",font="arial 16",background="#4a4a4a",fg="white").grid(row=4,column=1)
+    #name_ip=tk.Label(my_frame2,text="",font="arial 16",background="#4a4a4a",fg="white").grid(row=5,column=1)
 
 root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
