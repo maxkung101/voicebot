@@ -163,7 +163,6 @@ def changeVoice(value):
     #global routerName, entryPass
     #name = routerName
     #password = entryPass.get()
-    #print(paragraph)
     #text = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n" + "update_config=1\n" + "country=US\n\n" + "network={\n" + "\tssid=\"" + name + "\"\n" + "\tpsk=\"" + password + "\"\n" + "\tkey_mgmt=WPA-PSK\n" + "}\n"
     #print(text)
     #fh = open("/etc/wpa_supplicant/wpa_supplicant.conf", "w")
