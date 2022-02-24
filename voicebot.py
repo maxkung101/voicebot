@@ -151,25 +151,6 @@ def changeVoice(value):
     f.write(value)
     f.close()
 
-#routerName = ""
-#myRouter = tk.StringVar()
-#myRouter.set(routerName)
-#def changeHs(value): # For raspberry pi only
-    #global routerName
-    #routerName = value
-
-
-#def connHs(): # For raspberry pi only
-    #global routerName, entryPass
-    #name = routerName
-    #password = entryPass.get()
-    #text = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n" + "update_config=1\n" + "country=US\n\n" + "network={\n" + "\tssid=\"" + name + "\"\n" + "\tpsk=\"" + password + "\"\n" + "\tkey_mgmt=WPA-PSK\n" + "}\n"
-    #print(text)
-    #fh = open("/etc/wpa_supplicant/wpa_supplicant.conf", "w")
-    #fh.write(text)
-    #fh.close()
-
-
 def on_closing():
     global startLenny
     startLenny = False
@@ -222,23 +203,6 @@ drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row
 #powr_text = tk.StringVar()
 #powr=tk.Button(my_frame2,font="arial 16",textvariable=powr_text,background="#111111",fg="white",border=0,command=create_window, width = 9,height = 1).grid(row=1,column=1)
 #powr_text.set("Shutdown")
-
-#hotspots - For raspberry pi only
-#hot_drop=tk.Label(my_frame2,text="Router: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=2,column=0)
-#drop2 = tk.OptionMenu(my_frame2, myRouter, *hotspots, command=changeHs).grid(row=2,column=1)
-#entryPass = tk.StringVar()
-#passcode = tk.Entry(my_frame2, textvariable=entryPass).grid(row=3,column=1)
-#entryPass.set("Passcode")
-#conn_text = tk.StringVar()
-#conn=tk.Button(my_frame2,font="arial 16",textvariable=conn_text,background="#111111",fg="white",border=0,command=connHs, width = 9,height = 1).grid(row=4,column=1)
-#conn_text.set("Connect")
-
-#ip address - For raspberry pi only
-#name_ip=tk.Label(my_frame2,text="My IP: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=5,column=0)
-#if wifi_ip is not None:
-    #name_ip=tk.Label(my_frame2,text=wifi_ip,font="arial 16",background="#4a4a4a",fg="white").grid(row=5,column=1)
-#else:
-    #name_ip=tk.Label(my_frame2,text="",font="arial 16",background="#4a4a4a",fg="white").grid(row=5,column=1)
 
 root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
