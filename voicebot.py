@@ -5,7 +5,6 @@ import speech_recognition as sr
 import numpy as np
 import sounddevice as sd
 from tkinter import messagebox, ttk
-from wifi import Cell, Scheme
 #from subprocess import check_output # For raspberry pi only
 #from tkinter.messagebox import askyesno # For raspberry pi only
 #from subprocess import call # For raspberry pi only
@@ -36,10 +35,6 @@ heard = False
 options = [ "Frankie", "Captain Falcon Yes"]
 clicked = tk.StringVar()
 clicked.set(getName())
-#wifi_ip = check_output(['hostname', '-I']) # For raspberry pi only
-hotspots = []
-for i in Cell.all('wlan0'):
-        hotspots.append(i.ssid)
 
 sounds = pygame.mixer
 sounds.init()
