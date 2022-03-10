@@ -152,6 +152,32 @@ def on_closing():
     sounds.stop()
     root.destroy()
 
+class MyDialog:
+
+    def __init__(self, parent):
+        global width_value, height_value
+        top = self.top = tk.Toplevel(parent)
+        self.top.geometry("%dx%d+0+0" % (width_value-50, height_value-50))
+        self.top.configure(background="#4f4f4f")
+        self.titleLabel = tk.Label(top, text="About", font="arial 20", background="#4f4f4f", fg="white")
+        self.titleLabel.pack()
+        self.title2Label = tk.Label(top, text="Credits", font="arial 20 bold", background="#4f4f4f", fg="white")
+        self.title2Label.pack()
+        self.myLabel = tk.Label(top, text="Programmed by Max Kung", font="arial 16", background="#4f4f4f", fg="white")
+        self.myLabel.pack()
+        self.title3Label = tk.Label(top, text="Voices", font="arial 20 bold", background="#4f4f4f", fg="white")
+        self.title3Label.pack()
+        self.myLabel2 = tk.Label(top, text="Max Kung", font="arial 16", background="#4f4f4f", fg="white")
+        self.myLabel2.pack()
+        self.myLabel3 = tk.Label(top, text="Nintendo Co., Ltd.", font="arial 16", background="#4f4f4f", fg="white")
+        self.myLabel3.pack()
+        self.myCloseButton = tk.Button(top, text="Close", font="arial 16", background="#111111", fg="white", border=0, command=self.top.destroy, width = 10, height = 2)
+        self.myCloseButton.pack()
+
+def aboutClick():
+    inputDialog = MyDialog(root)
+    root.wait_window(inputDialog.top)
+
 #def create_window(): # For raspberry pi only
     #answer = askyesno(title="Confirmation",
                       #message="Are you sure you want to power off?")
@@ -198,6 +224,11 @@ drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row
 #powr_text = tk.StringVar()
 #powr=tk.Button(my_frame2,font="arial 16",textvariable=powr_text,background="#111111",fg="white",border=0,command=create_window, width = 9,height = 1).grid(row=1,column=1)
 #powr_text.set("Shutdown")
+
+#about button
+abtn_text = tk.StringVar()
+abtn=tk.Button(my_frame2,font="arial 20",textvariable=abtn_text,background="#111111",fg="white",border=0, command=aboutClick, width = 10,height = 2).grid(row=2,column=1)
+abtn_text.set("About")
 
 root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
