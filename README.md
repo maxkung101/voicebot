@@ -7,10 +7,8 @@ Introduction
 Download source code
 --------------------
 Please read the [terms of use](https://github.com/maxkung101/voicebot/blob/master/terms.txt) before downloading the source code.
-
-Clone the repo via git:
 ```
-$ git clone https://github.com/maxkung101/voicebot
+$ gh repo clone maxkung101/voicebot
 ```
 Note: You must use this program only to answer scam calls. Please do not use it to make calls. Phone scams with robots are against the US law.
 
