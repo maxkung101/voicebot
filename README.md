@@ -2,7 +2,7 @@
 
 Introduction
 ------------
-***Voicebot*** is an application that tricks phone scammers into talking to a robot and annoying them to waste their time.
+***Voicebot*** is an python program that tricks phone scammers into talking to a robot and annoying them to waste their time.
 
 Download source code
 --------------------
