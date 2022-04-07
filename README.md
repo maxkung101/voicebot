@@ -1,6 +1,10 @@
 # Voicebot
 A program to bait spam phone calls
 
+Introduction
+------------
+People have been receiving unwanted phone calls from scammers who want personal information. They are robocallers who often use automated recordings to call people. This repository gives robocallers a taste of their own medicine.
+
 Download source code
 --------------------
 Please read the [terms of use](https://github.com/maxkung101/voicebot/blob/master/terms.txt) before downloading the source code.
