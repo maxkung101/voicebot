@@ -5,7 +5,6 @@ import speech_recognition as sr
 import numpy as np
 import sounddevice as sd
 from tkinter import messagebox, ttk
-#from subprocess import check_output # For raspberry pi only
 #from tkinter.messagebox import askyesno # For raspberry pi only
 #from subprocess import call # For raspberry pi only
 
