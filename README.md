@@ -1,5 +1,5 @@
 # Voicebot
-A program to bait spam phone calls
+A program to bait spam and scam phone calls
 
 Introduction
 ------------
