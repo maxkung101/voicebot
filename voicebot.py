@@ -39,22 +39,22 @@ sounds = pygame.mixer
 sounds.init()
 
 # Frankie voice clips
-hello_fra = sounds.Sound("wav/frankie/hello.wav")
+hello_fra = sounds.Sound("wav/frankie/hello/hello.wav")
 frankie = []
-frankie.append(sounds.Sound("wav/frankie/company.wav"))
-frankie.append(sounds.Sound("wav/frankie/goodday.wav"))
-frankie.append(sounds.Sound("wav/frankie/hearing.wav"))
-frankie.append(sounds.Sound("wav/frankie/imsorry.wav"))
-frankie.append(sounds.Sound("wav/frankie/sayitagain.wav"))
-frankie.append(sounds.Sound("wav/frankie/tellme.wav"))
-frankie.append(sounds.Sound("wav/frankie/tellmemore.wav"))
-frankie.append(sounds.Sound("wav/frankie/yeah.wav"))
-frankie.append(sounds.Sound("wav/frankie/yes.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/company.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/goodday.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/hearing.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/imsorry.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/sayitagain.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/tellme.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/tellmemore.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/yeah.wav"))
+frankie.append(sounds.Sound("wav/frankie/core/yes.wav"))
 
 # Captain Falcon voice clips
-hello_fal = sounds.Sound("wav/falcon/c-falcon_HELLO.wav")
+hello_fal = sounds.Sound("wav/falcon/hello/c-falcon_HELLO.wav")
 falcon = []
-falcon.append(sounds.Sound("wav/falcon/c-falcon_YES.wav"))
+falcon.append(sounds.Sound("wav/falcon/core/c-falcon_YES.wav"))
 
 startLenny = False
 temp = 0
