@@ -130,10 +130,14 @@ def randomLine():
         if heard:
             with m as source:
                 audio = r.listen(source)
-            if startLenny: 
+            if startLenny:
                 entry_text.set(getName() + " is speaking")
                 sayIt(getName())
                 heard = False
+            else:
+                sounds.stop()
+                temp = 0
+            if startLenny:
                 entry_text.set("Spammer's turn to talk")
                 randomLine()
             else:
