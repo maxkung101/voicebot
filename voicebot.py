@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import time, pygame.mixer, random, copy
+import time, pygame.mixer, random, copy, os
 import tkinter as tk
 import speech_recognition as sr
 import numpy as np
@@ -41,20 +41,28 @@ sounds.init()
 # Frankie voice clips
 hello_fra = sounds.Sound("wav/frankie/hello/hello.wav")
 frankie = []
-frankie.append(sounds.Sound("wav/frankie/core/company.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/goodday.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/hearing.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/imsorry.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/sayitagain.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/tellme.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/tellmemore.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/yeah.wav"))
-frankie.append(sounds.Sound("wav/frankie/core/yes.wav"))
+frankieDIR = "wav/frankie/core/"
+frankieDirectory = os.fsencode(frankieDIR)
+for file in os.listdir(os.fsencode(frankieDirectory)):
+     filename = os.fsdecode(file)
+     if filename.endswith(".wav"):
+         frankie.append(sounds.Sound(frankieDIR + filename))
+         continue
+     else:
+         continue
 
 # Captain Falcon voice clips
 hello_fal = sounds.Sound("wav/falcon/hello/c-falcon_HELLO.wav")
 falcon = []
-falcon.append(sounds.Sound("wav/falcon/core/c-falcon_YES.wav"))
+falconDIR = "wav/falcon/core/"
+falconDirectory = os.fsencode(falconDIR)
+for file in os.listdir(os.fsencode(falconDirectory)):
+     filename = os.fsdecode(file)
+     if filename.endswith(".wav"):
+         falcon.append(sounds.Sound(falconDIR + filename))
+         continue
+     else:
+         continue
 
 startLenny = False
 temp = 0
