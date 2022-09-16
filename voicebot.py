@@ -33,7 +33,13 @@ heard = False
 # Set up settings
 options = [ "Frankie", "Captain Falcon Yes"]
 clicked = tk.StringVar()
-clicked.set(getName())
+try:
+    clicked.set(getName())
+except:
+    clicked.set("Frankie")
+    f = open("settings.csv", "w")
+    f.write("Frankie")
+    f.close()
 
 sounds = pygame.mixer
 sounds.init()
