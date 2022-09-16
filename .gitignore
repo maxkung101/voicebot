@@ -1,0 +1,7 @@
+# This .gitignore file should be placed at the root of your project directory
+
+# Visual Studio cache directory
+.vs/
+
+# Memory file
+*.csv
