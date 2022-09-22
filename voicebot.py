@@ -33,6 +33,8 @@ heard = False
 # Set up settings
 options = [ "Frankie", "Captain Falcon Yes"]
 clicked = tk.StringVar()
+
+# Check if memory file exists.
 try:
     clicked.set(getName())
 except:
