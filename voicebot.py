@@ -5,8 +5,6 @@ import speech_recognition as sr
 import numpy as np
 import sounddevice as sd
 from tkinter import messagebox, ttk
-#from tkinter.messagebox import askyesno # For raspberry pi only
-#from subprocess import call # For raspberry pi only
 
 def getName():
     voices_app = open("settings.csv", "r")
@@ -197,12 +195,6 @@ def aboutClick():
     inputDialog = MyDialog(root)
     root.wait_window(inputDialog.top)
 
-#def create_window(): # For raspberry pi only
-    #answer = askyesno(title="Confirmation",
-                      #message="Are you sure you want to power off?")
-    #if answer:
-        #call("sudo shutdown -h now", shell=True)
-
 style = ttk.Style()
 style.theme_create( "MyStyle", parent="alt", settings={
         "TNotebook": {"configure": {"tabmargins": [0, 0, 0, 0] } },
@@ -237,12 +229,6 @@ btn_text.set("Start")
 #dropdown
 name_drop=tk.Label(my_frame2,text="Voice: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=0,column=0)
 drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row=0,column=1)
-
-#power button - For raspberry pi only
-#name_power=tk.Label(my_frame2,text="Power: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=1,column=0)
-#powr_text = tk.StringVar()
-#powr=tk.Button(my_frame2,font="arial 16",textvariable=powr_text,background="#111111",fg="white",border=0,command=create_window, width = 9,height = 1).grid(row=1,column=1)
-#powr_text.set("Shutdown")
 
 #about button
 abtn_text = tk.StringVar()
