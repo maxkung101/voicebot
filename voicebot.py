@@ -29,7 +29,7 @@ m = sr.Microphone()
 heard = False
 
 # Set up settings
-options = [ "Frankie", "Captain Falcon Yes"]
+options = [ "Frankie", "Captain Falcon Yes", "Crystal"]
 clicked = tk.StringVar()
 
 # Check if memory file exists.
@@ -70,6 +70,19 @@ for file in os.listdir(os.fsencode(falconDirectory)):
      else:
          continue
 
+# Crystal voice clips
+hello_cry = sounds.Sound("wav/crystal/hello/hello.wav")
+crystal = []
+crystalDIR = "wav/crystal/core/"
+crystalDirectory = os.fsencode(crystalDIR)
+for file in os.listdir(os.fsencode(crystalDirectory)):
+     filename = os.fsdecode(file)
+     if filename.endswith(".wav"):
+         crystal.append(sounds.Sound(crystalDIR + filename))
+         continue
+     else:
+         continue
+
 startLenny = False
 temp = 0
 
@@ -89,6 +102,9 @@ def playHello(line):
     if line == "Captain Falcon Yes":
         hello_fal.play()
         temp = hello_fal.get_length()
+    elif line == "Crystal":
+        hello_cry.play()
+        temp = hello_cry.get_length()
     else:
         hello_fra.play()
         temp = hello_fra.get_length()
@@ -102,6 +118,10 @@ def sayIt(line):
         x = random.randint(0, len(falcon)-1)
         falcon[x].play()
         temp = falcon[x].get_length()
+    elif line == "Crystal":
+        x = random.randint(0, len(crystal)-1)
+        crystal[x].play()
+        temp = crystal[x].get_length()
     else:
         x = random.randint(0, len(frankie)-1)
         frankie[x].play()
