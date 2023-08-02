@@ -7,7 +7,7 @@ People have been receiving unwanted phone calls from scammers who want personal 
 
 Features
 --------
-AI voices
+Human and AI voices
 
 Download source code
 --------------------
