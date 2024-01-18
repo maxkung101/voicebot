@@ -155,6 +155,8 @@ def randomLine():
     if startLenny:
         if heard:
             with m as source:
+                #adjust for ambient noise
+                r.adjust_for_ambient_noise(source)
                 audio = r.listen(source)
             if startLenny:
                 entry_text.set(getName() + " is speaking")
