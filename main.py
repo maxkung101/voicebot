@@ -15,7 +15,7 @@ def getName():
     return data[0][0]
 
 # Set up GUI
-root=tk.Tk()
+root = tk.Tk()
 width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
 root.geometry("%dx%d+0+0" % (width_value, height_value))
