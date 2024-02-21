@@ -21,7 +21,7 @@ height_value = root.winfo_screenheight()
 root.geometry("%dx%d+0+0" % (width_value, height_value))
 root.resizable(False, False)
 root.title("Voicebot")
-root.configure(background="#4a4a4a")
+root.configure(background = "#4a4a4a")
 
 # Set up microphone
 r = sr.Recognizer()
@@ -198,19 +198,19 @@ class MyDialog:
         top = self.top = tk.Toplevel(parent)
         self.top.geometry("%dx%d+0+0" % (width_value-50, height_value-50))
         self.top.configure(background="#4f4f4f")
-        self.titleLabel = tk.Label(top, text="About", font="arial 20", background="#4f4f4f", fg="white")
+        self.titleLabel = tk.Label(top, text = "About", font = "arial 20", background = "#4f4f4f", fg = "white")
         self.titleLabel.pack()
-        self.title2Label = tk.Label(top, text="Credits", font="arial 20 bold", background="#4f4f4f", fg="white")
+        self.title2Label = tk.Label(top, text = "Credits", font = "arial 20 bold", background = "#4f4f4f", fg = "white")
         self.title2Label.pack()
-        self.myLabel = tk.Label(top, text="Programmed by Max Kung", font="arial 16", background="#4f4f4f", fg="white")
+        self.myLabel = tk.Label(top, text = "Programmed by Max Kung", font = "arial 16", background = "#4f4f4f", fg = "white")
         self.myLabel.pack()
-        self.title3Label = tk.Label(top, text="Voices", font="arial 20 bold", background="#4f4f4f", fg="white")
+        self.title3Label = tk.Label(top, text = "Voices", font = "arial 20 bold", background = "#4f4f4f", fg = "white")
         self.title3Label.pack()
-        self.myLabel2 = tk.Label(top, text="Max Kung", font="arial 16", background="#4f4f4f", fg="white")
+        self.myLabel2 = tk.Label(top, text = "Max Kung", font = "arial 16", background = "#4f4f4f", fg = "white")
         self.myLabel2.pack()
-        self.myLabel3 = tk.Label(top, text="Nintendo Co., Ltd.", font="arial 16", background="#4f4f4f", fg="white")
+        self.myLabel3 = tk.Label(top, text = "Nintendo Co., Ltd.", font = "arial 16", background = "#4f4f4f", fg = "white")
         self.myLabel3.pack()
-        self.myCloseButton = tk.Button(top, text="Close", font="arial 16", background="#111111", fg="white", border=0, command=self.top.destroy, width = 10, height = 2)
+        self.myCloseButton = tk.Button(top, text = "Close", font = "arial 16", background = "#111111", fg = "white", border = 0, command = self.top.destroy, width = 10, height = 2)
         self.myCloseButton.pack()
 
 def aboutClick():
@@ -226,35 +226,35 @@ style.theme_use("MyStyle")
 my_notebook = ttk.Notebook(root, width=200, height=200)
 my_notebook.pack()
 
-my_frame1 = tk.Frame(my_notebook, width=width_value-2, height=height_value-2, bg="#4a4a4a")
-my_frame2 = tk.Frame(my_notebook, width=width_value-2, height=height_value-2, bg="#4a4a4a")
+my_frame1 = tk.Frame(my_notebook, width = width_value-2, height = height_value-2, bg = "#4a4a4a")
+my_frame2 = tk.Frame(my_notebook, width = width_value-2, height = height_value-2, bg = "#4a4a4a")
 
 my_frame1.pack()
 my_frame2.pack()
 
-my_notebook.add(my_frame1, text="Home")
-my_notebook.add(my_frame2, text="Settings")
+my_notebook.add(my_frame1, text = "Home")
+my_notebook.add(my_frame2, text = "Settings")
 
 #name
-name=tk.Label(my_frame1,text="Voicebot",font="arial 30 bold",background="#4a4a4a",fg="white").pack()
+name = tk.Label(my_frame1,text = "Voicebot", font = "arial 30 bold", background = "#4a4a4a", fg = "white").pack()
 
 #entry box
 entry_text = tk.StringVar()
-entry=tk.Label(my_frame1,textvariable=entry_text,font="arial 15",background="#4a4a4a",fg="white").pack()
+entry = tk.Label(my_frame1, textvariable = entry_text, font = "arial 15", background = "#4a4a4a", fg = "white").pack()
 entry_text.set("Push button to start")
 
 #button
 btn_text = tk.StringVar()
-btn=tk.Button(my_frame1,font="arial 20",textvariable=btn_text,background="#111111",fg="white",border=0,command=lennyMain, width = 10,height = 2).pack()
+btn = tk.Button(my_frame1, font = "arial 20", textvariable = btn_text,background = "#111111", fg = "white", border = 0, command = lennyMain, width = 10,height = 2).pack()
 btn_text.set("Start")
 
 #dropdown
-name_drop=tk.Label(my_frame2,text="Voice: ",font="arial 16 bold",background="#4a4a4a",fg="white").grid(row=0,column=0)
-drop = tk.OptionMenu(my_frame2, clicked, *options, command=changeVoice).grid(row=0,column=1)
+name_drop = tk.Label(my_frame2, text = "Voice: ", font = "arial 16 bold", background = "#4a4a4a", fg = "white").grid(row = 0,column = 0)
+drop = tk.OptionMenu(my_frame2, clicked, *options, command = changeVoice).grid(row = 0,column = 1)
 
 #about button
 abtn_text = tk.StringVar()
-abtn=tk.Button(my_frame2,font="arial 20",textvariable=abtn_text,background="#111111",fg="white",border=0, command=aboutClick, width = 10,height = 2).grid(row=2,column=1)
+abtn = tk.Button(my_frame2, font = "arial 20", textvariable = abtn_text, background = "#111111", fg = "white", border = 0, command = aboutClick, width = 10,height = 2).grid(row = 2,column = 1)
 abtn_text.set("About")
 
 root.protocol("WM_DELETE_WINDOW", on_closing)
