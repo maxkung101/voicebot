@@ -6,6 +6,7 @@ import numpy as np
 import sounddevice as sd
 from tkinter import messagebox, ttk
 
+# Memory function
 def getName():
     voices_app = open("settings.csv", "r")
     data = []
@@ -83,9 +84,11 @@ for file in os.listdir(os.fsencode(crystalDirectory)):
      else:
          continue
 
+# Initiate
 startLenny = False
 temp = 0
 
+# Hear function
 def audio_callback(indata, frames, time, status):
     global heard
     volume_norm = np.linalg.norm(indata) * 10
@@ -98,6 +101,7 @@ def audio_callback(indata, frames, time, status):
         else:
             pass
 
+# Play hello function
 def playHello(line):
     if line == "Captain Falcon Yes":
         hello_fal.play()
@@ -113,6 +117,7 @@ def playHello(line):
         time.sleep(1)
         temp -= 1
 
+# Say function
 def sayIt(line):
     if line == "Captain Falcon Yes":
         x = random.randint(0, len(falcon)-1)
@@ -131,6 +136,7 @@ def sayIt(line):
         time.sleep(1)
         temp -= 1
 
+# Main function
 def lennyMain():
     global startLenny
     if startLenny:
@@ -149,6 +155,7 @@ def lennyMain():
         if startLenny: entry_text.set("Spammer's turn to talk")
         randomLine()
 
+# Random line function
 def randomLine():
     global heard
     root.update()
@@ -180,11 +187,13 @@ def randomLine():
         sounds.stop()
         temp = 0
 
+# Settings function
 def changeVoice(value):
     f = open("settings.csv", "w")
     f.write(value)
     f.close()
 
+# Close function
 def on_closing():
     global startLenny
     startLenny = False
