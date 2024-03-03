@@ -38,6 +38,7 @@ $ python main.py
 ## About
 ### Credits
 Programmed by Max Kung
+
 Human voices by Max Kung
 
 ### Disclaimer
